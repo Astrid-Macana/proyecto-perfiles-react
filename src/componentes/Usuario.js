@@ -1,22 +1,17 @@
 import React from "react";
-
-export function Usuario() {
+import '../estilos/usuario.css';
+export function Usuario(props) {
     return (
       <div className="contenedor-usuario">
         <img
           className="imagen-usuario"
-           src={require("../imagenes/Captura.PNG")}
+          src={require(`../imagenes/usuario-${props.imagen}.png`)}
           alt="foto de carla "
         />
         <div className="contenedor-texto">
-          <p className="nombre-testimonio"> Carla Sanchez </p>
-          <p className="ciudad">Bogota -Colombia </p>
-          <p className="texto">
-            Observadora y detallista, Ada Lovelace fue la primera persona en
-            notar que el motor analítico servía más que para hacer cálculos,
-            razón por la que digitó un algoritmo para calcular los números de
-            Bernoulli usando dicha herramienta
-          </p>
+          <p className="nombre-testimonio"><strong>{props.nombre}</strong> </p>
+          <p className="ciudad">{props.ciudad} </p>
+          <p className="texto">"{props.texto}"</p>
         </div>
       </div>
     );
